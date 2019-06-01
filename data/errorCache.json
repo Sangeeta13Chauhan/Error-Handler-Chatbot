@@ -1,0 +1,487 @@
+{
+  "python": [
+    {
+      "description": "The base class for all built-in exceptions.  It is not meant to be directly\ninherited by user-defined classes (for that, use Exception).  If\nstr() is called on an instance of this class, the representation of\nthe argument(s) to the instance are returned, or the empty string when\nthere were no arguments.\n\n\nargsÂ¶\nThe tuple of arguments given to the exception constructor.  Some built-in\nexceptions (like OSError) expect a certain number of arguments and\nassign a special meaning to the elements of this tuple, while others are\nusually called only with a single string giving an error message.\n\n\n\nwith_traceback(tb)Â¶\nThis method sets tb as the new traceback for the exception and returns\nthe exception object.  It is usually used in exception handling code like\nthis:\ntry:\n    ...\nexcept SomeException:\n    tb = sys.exc_info()[2]\n    raise OtherException(...).with_traceback(tb)",
+      "errorName": "baseexception",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The tuple of arguments given to the exception constructor.  Some built-in\nexceptions (like OSError) expect a certain number of arguments and\nassign a special meaning to the elements of this tuple, while others are\nusually called only with a single string giving an error message.",
+      "errorName": "args",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "This method sets tb as the new traceback for the exception and returns\nthe exception object.  It is usually used in exception handling code like\nthis:\ntry:\n    ...\nexcept SomeException:\n    tb = sys.exc_info()[2]\n    raise OtherException(...).with_traceback(tb)",
+      "errorName": "with_traceback",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "All built-in, non-system-exiting exceptions are derived from this class.  All\nuser-defined exceptions should also be derived from this class.",
+      "errorName": "exception",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The base class for those built-in exceptions that are raised for various\narithmetic errors: OverflowError, ZeroDivisionError,\nFloatingPointError.",
+      "errorName": "arithmeticerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a buffer related operation cannot be\nperformed.",
+      "errorName": "buffererror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The base class for the exceptions that are raised when a key or index used on\na mapping or sequence is invalid: IndexError, KeyError.  This\ncan be raised directly by codecs.lookup().",
+      "errorName": "lookuperror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an assert statement fails.",
+      "errorName": "assertionerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an attribute reference (see Attribute references) or\nassignment fails.  (When an object does not support attribute references or\nattribute assignments at all, TypeError is raised.)",
+      "errorName": "attributeerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when the input() function hits an end-of-file condition (EOF)\nwithout reading any data. (N.B.: the io.IOBase.read() and\nio.IOBase.readline() methods return an empty string when they hit EOF.)",
+      "errorName": "eoferror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Not currently used.",
+      "errorName": "floatingpointerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a generator or coroutine is closed;\nsee generator.close() and coroutine.close().  It\ndirectly inherits from BaseException instead of Exception since\nit is technically not an error.",
+      "errorName": "generatorexit",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when the import statement has troubles trying to\nload a module.  Also raised when the âfrom listâ in from ... import\nhas a name that cannot be found.\nThe name and path attributes can be set using keyword-only\narguments to the constructor. When set they represent the name of the module\nthat was attempted to be imported and the path to any file which triggered\nthe exception, respectively.\n\nChanged in version 3.3: Added the name and path attributes.",
+      "errorName": "importerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A subclass of ImportError which is raised by import\nwhen a module could not be located.  It is also raised when None\nis found in sys.modules.\n\nNew in version 3.6.",
+      "errorName": "modulenotfounderror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a sequence subscript is out of range.  (Slice indices are\nsilently truncated to fall in the allowed range; if an index is not an\ninteger, TypeError is raised.)",
+      "errorName": "indexerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a mapping (dictionary) key is not found in the set of existing keys.",
+      "errorName": "keyerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when the user hits the interrupt key (normally Control-C or\nDelete).  During execution, a check for interrupts is made\nregularly. The exception inherits from BaseException so as to not be\naccidentally caught by code that catches Exception and thus prevent\nthe interpreter from exiting.",
+      "errorName": "keyboardinterrupt",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an operation runs out of memory but the situation may still be\nrescued (by deleting some objects).  The associated value is a string indicating\nwhat kind of (internal) operation ran out of memory. Note that because of the\nunderlying memory management architecture (Câs malloc() function), the\ninterpreter may not always be able to completely recover from this situation; it\nnevertheless raises an exception so that a stack traceback can be printed, in\ncase a run-away program was the cause.",
+      "errorName": "memoryerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a local or global name is not found.  This applies only to\nunqualified names.  The associated value is an error message that includes the\nname that could not be found.",
+      "errorName": "nameerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "This exception is derived from RuntimeError.  In user defined base\nclasses, abstract methods should raise this exception when they require\nderived classes to override the method, or while the class is being\ndeveloped to indicate that the real implementation still needs to be added.\n\nNote\nIt should not be used to indicate that an operator or method is not\nmeant to be supported at all â in that case either leave the operator /\nmethod undefined or, if a subclass, set it to None.\n\n\nNote\nNotImplementedError and NotImplemented are not interchangeable,\neven though they have similar names and purposes.  See\nNotImplemented for details on when to use it.",
+      "errorName": "notimplementederror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "This exception is raised when a system function returns a system-related\nerror, including I/O failures such as âfile not foundâ or âdisk fullâ\n(not for illegal argument types or other incidental errors).\nThe second form of the constructor sets the corresponding attributes,\ndescribed below.  The attributes default to None if not\nspecified.  For backwards compatibility, if three arguments are passed,\nthe args attribute contains only a 2-tuple\nof the first two constructor arguments.\nThe constructor often actually returns a subclass of OSError, as\ndescribed in OS exceptions below.  The particular subclass depends on\nthe final errno value.  This behaviour only occurs when\nconstructing OSError directly or via an alias, and is not\ninherited when subclassing.\n\n\nerrnoÂ¶\nA numeric error code from the C variable errno.\n\n\n\nwinerrorÂ¶\nUnder Windows, this gives you the native\nWindows error code.  The errno attribute is then an approximate\ntranslation, in POSIX terms, of that native error code.\nUnder Windows, if the winerror constructor argument is an integer,\nthe errno attribute is determined from the Windows error code,\nand the errno argument is ignored.  On other platforms, the\nwinerror argument is ignored, and the winerror attribute\ndoes not exist.\n\n\n\nstrerrorÂ¶\nThe corresponding error message, as provided by\nthe operating system.  It is formatted by the C\nfunctions perror() under POSIX, and FormatMessage()\nunder Windows.\n\n\n\nfilenameÂ¶\n\nfilename2Â¶\nFor exceptions that involve a file system path (such as open() or\nos.unlink()), filename is the file name passed to the function.\nFor functions that involve two file system paths (such as\nos.rename()), filename2 corresponds to the second\nfile name passed to the function.\n\n\nChanged in version 3.3: EnvironmentError, IOError, WindowsError,\nsocket.error, select.error and\nmmap.error have been merged into OSError, and the\nconstructor may return a subclass.\n\n\nChanged in version 3.4: The filename attribute is now the original file name passed to\nthe function, instead of the name encoded to or decoded from the\nfilesystem encoding.  Also, the filename2 constructor argument and\nattribute was added.",
+      "errorName": "oserror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A numeric error code from the C variable errno.",
+      "errorName": "errno",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Under Windows, this gives you the native\nWindows error code.  The errno attribute is then an approximate\ntranslation, in POSIX terms, of that native error code.\nUnder Windows, if the winerror constructor argument is an integer,\nthe errno attribute is determined from the Windows error code,\nand the errno argument is ignored.  On other platforms, the\nwinerror argument is ignored, and the winerror attribute\ndoes not exist.",
+      "errorName": "winerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The corresponding error message, as provided by\nthe operating system.  It is formatted by the C\nfunctions perror() under POSIX, and FormatMessage()\nunder Windows.",
+      "errorName": "strerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "For exceptions that involve a file system path (such as open() or\nos.unlink()), filename is the file name passed to the function.\nFor functions that involve two file system paths (such as\nos.rename()), filename2 corresponds to the second\nfile name passed to the function.",
+      "errorName": "filename",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when the result of an arithmetic operation is too large to be\nrepresented.  This cannot occur for integers (which would rather raise\nMemoryError than give up).  However, for historical reasons,\nOverflowError is sometimes raised for integers that are outside a required\nrange.   Because of the lack of standardization of floating point exception\nhandling in C, most floating point operations are not checked.",
+      "errorName": "overflowerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "This exception is derived from RuntimeError.  It is raised when the\ninterpreter detects that the maximum recursion depth (see\nsys.getrecursionlimit()) is exceeded.\n\nNew in version 3.5: Previously, a plain RuntimeError was raised.",
+      "errorName": "recursionerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "This exception is raised when a weak reference proxy, created by the\nweakref.proxy() function, is used to access an attribute of the referent\nafter it has been garbage collected. For more information on weak references,\nsee the weakref module.",
+      "errorName": "referenceerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an error is detected that doesnât fall in any of the other\ncategories.  The associated value is a string indicating what precisely went\nwrong.",
+      "errorName": "runtimeerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised by built-in function next() and an iteratorâs\n__next__() method to signal that there are no further\nitems produced by the iterator.\nThe exception object has a single attribute value, which is\ngiven as an argument when constructing the exception, and defaults\nto None.\nWhen a generator or coroutine function\nreturns, a new StopIteration instance is\nraised, and the value returned by the function is used as the\nvalue parameter to the constructor of the exception.\nIf a generator code directly or indirectly raises StopIteration,\nit is converted into a RuntimeError (retaining the\nStopIteration as the new exceptionâs cause).\n\nChanged in version 3.3: Added value attribute and the ability for generator functions to\nuse it to return a value.\n\n\nChanged in version 3.5: Introduced the RuntimeError transformation via\nfrom __future__ import generator_stop, see PEP 479.\n\n\nChanged in version 3.7: Enable PEP 479 for all code by default: a StopIteration\nerror raised in a generator is transformed into a RuntimeError.",
+      "errorName": "stopiteration",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Must be raised by __anext__() method of an\nasynchronous iterator object to stop the iteration.\n\nNew in version 3.5.",
+      "errorName": "stopasynciteration",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when the parser encounters a syntax error.  This may occur in an\nimport statement, in a call to the built-in functions exec()\nor eval(), or when reading the initial script or standard input\n(also interactively).\nInstances of this class have attributes filename, lineno,\noffset and text for easier access to the details.  str()\nof the exception instance returns only the message.",
+      "errorName": "syntaxerror",
+      "example": "x = int(input('Enter a number: '))\nwhille x%2 == 0:\n\tprint('You have entered an even number.')\nelse:\n\tprint ('You have entered an odd number.')\n\nFile 'error.py', line 3\nwhille x%2 == 0:\n\t\t^\nSyntaxError: invalid syntax",
+      "url": [
+        "https://www.quora.com/What-does-syntax-error-or-invalid-syntax-mean-in-Python",
+        "https://www.quora.com/Why-do-I-get-syntax-error-else"
+      ]
+    },
+    {
+      "description": "Base class for syntax errors related to incorrect indentation.  This is a\nsubclass of SyntaxError.",
+      "errorName": "indentationerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when indentation contains an inconsistent use of tabs and spaces.\nThis is a subclass of IndentationError.",
+      "errorName": "taberror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when the interpreter finds an internal error, but the situation does not\nlook so serious to cause it to abandon all hope. The associated value is a\nstring indicating what went wrong (in low-level terms).\nYou should report this to the author or maintainer of your Python interpreter.\nBe sure to report the version of the Python interpreter (sys.version; it is\nalso printed at the start of an interactive Python session), the exact error\nmessage (the exceptionâs associated value) and if possible the source of the\nprogram that triggered the error.",
+      "errorName": "systemerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "This exception is raised by the sys.exit() function.  It inherits from\nBaseException instead of Exception so that it is not accidentally\ncaught by code that catches Exception.  This allows the exception to\nproperly propagate up and cause the interpreter to exit.  When it is not\nhandled, the Python interpreter exits; no stack traceback is printed.  The\nconstructor accepts the same optional argument passed to sys.exit().\nIf the value is an integer, it specifies the system exit status (passed to\nCâs exit() function); if it is None, the exit status is zero; if\nit has another type (such as a string), the objectâs value is printed and\nthe exit status is one.\nA call to sys.exit() is translated into an exception so that clean-up\nhandlers (finally clauses of try statements) can be\nexecuted, and so that a debugger can execute a script without running the risk\nof losing control.  The os._exit() function can be used if it is\nabsolutely positively necessary to exit immediately (for example, in the child\nprocess after a call to os.fork()).\n\n\ncodeÂ¶\nThe exit status or error message that is passed to the constructor.\n(Defaults to None.)",
+      "errorName": "systemexit",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The exit status or error message that is passed to the constructor.\n(Defaults to None.)",
+      "errorName": "code",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an operation or function is applied to an object of inappropriate\ntype.  The associated value is a string giving details about the type mismatch.\nThis exception may be raised by user code to indicate that an attempted\noperation on an object is not supported, and is not meant to be. If an object\nis meant to support a given operation but has not yet provided an\nimplementation, NotImplementedError is the proper exception to raise.\nPassing arguments of the wrong type (e.g. passing a list when an\nint is expected) should result in a TypeError, but passing\narguments with the wrong value (e.g. a number outside expected boundaries)\nshould result in a ValueError.",
+      "errorName": "typeerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a reference is made to a local variable in a function or method, but\nno value has been bound to that variable.  This is a subclass of\nNameError.",
+      "errorName": "unboundlocalerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a Unicode-related encoding or decoding error occurs.  It is a\nsubclass of ValueError.\nUnicodeError has attributes that describe the encoding or decoding\nerror.  For example, err.object[err.start:err.end] gives the particular\ninvalid input that the codec failed on.\n\n\nencodingÂ¶\nThe name of the encoding that raised the error.\n\n\n\nreasonÂ¶\nA string describing the specific codec error.\n\n\n\nobjectÂ¶\nThe object the codec was attempting to encode or decode.\n\n\n\nstartÂ¶\nThe first index of invalid data in object.\n\n\n\nendÂ¶\nThe index after the last invalid data in object.",
+      "errorName": "unicodeerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The name of the encoding that raised the error.",
+      "errorName": "encoding",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A string describing the specific codec error.",
+      "errorName": "reason",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The object the codec was attempting to encode or decode.",
+      "errorName": "object",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The first index of invalid data in object.",
+      "errorName": "start",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "The index after the last invalid data in object.",
+      "errorName": "end",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a Unicode-related error occurs during encoding.  It is a subclass of\nUnicodeError.",
+      "errorName": "unicodeencodeerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a Unicode-related error occurs during decoding.  It is a subclass of\nUnicodeError.",
+      "errorName": "unicodedecodeerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a Unicode-related error occurs during translating.  It is a subclass\nof UnicodeError.",
+      "errorName": "unicodetranslateerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an operation or function receives an argument that has the\nright type but an inappropriate value, and the situation is not described by a\nmore precise exception such as IndexError.",
+      "errorName": "valueerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when the second argument of a division or modulo operation is zero.  The\nassociated value is a string indicating the type of the operands and the\noperation.",
+      "errorName": "zerodivisionerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "",
+      "errorName": "environmenterror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "",
+      "errorName": "ioerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Only available on Windows.",
+      "errorName": "windowserror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an operation would block on an object (e.g. socket) set\nfor non-blocking operation.\nCorresponds to errno EAGAIN, EALREADY,\nEWOULDBLOCK and EINPROGRESS.\nIn addition to those of OSError, BlockingIOError can have\none more attribute:\n\n\ncharacters_writtenÂ¶\nAn integer containing the number of characters written to the stream\nbefore it blocked.  This attribute is available when using the\nbuffered I/O classes from the io module.",
+      "errorName": "blockingioerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "An integer containing the number of characters written to the stream\nbefore it blocked.  This attribute is available when using the\nbuffered I/O classes from the io module.",
+      "errorName": "characters_written",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when an operation on a child process failed.\nCorresponds to errno ECHILD.",
+      "errorName": "childprocesserror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A base class for connection-related issues.\nSubclasses are BrokenPipeError, ConnectionAbortedError,\nConnectionRefusedError and ConnectionResetError.",
+      "errorName": "connectionerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A subclass of ConnectionError, raised when trying to write on a\npipe while the other end has been closed, or trying to write on a socket\nwhich has been shutdown for writing.\nCorresponds to errno EPIPE and ESHUTDOWN.",
+      "errorName": "brokenpipeerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A subclass of ConnectionError, raised when a connection attempt\nis aborted by the peer.\nCorresponds to errno ECONNABORTED.",
+      "errorName": "connectionabortederror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A subclass of ConnectionError, raised when a connection attempt\nis refused by the peer.\nCorresponds to errno ECONNREFUSED.",
+      "errorName": "connectionrefusederror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "A subclass of ConnectionError, raised when a connection is\nreset by the peer.\nCorresponds to errno ECONNRESET.",
+      "errorName": "connectionreseterror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when trying to create a file or directory which already exists.\nCorresponds to errno EEXIST.",
+      "errorName": "fileexistserror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a file or directory is requested but doesnât exist.\nCorresponds to errno ENOENT.",
+      "errorName": "filenotfounderror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a system call is interrupted by an incoming signal.\nCorresponds to errno EINTR.\n\nChanged in version 3.5: Python now retries system calls when a syscall is interrupted by a\nsignal, except if the signal handler raises an exception (see PEP 475\nfor the rationale), instead of raising InterruptedError.",
+      "errorName": "interruptederror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a file operation (such as os.remove()) is requested\non a directory.\nCorresponds to errno EISDIR.",
+      "errorName": "isadirectoryerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a directory operation (such as os.listdir()) is requested\non something which is not a directory.\nCorresponds to errno ENOTDIR.",
+      "errorName": "notadirectoryerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when trying to run an operation without the adequate access\nrights - for example filesystem permissions.\nCorresponds to errno EACCES and EPERM.",
+      "errorName": "permissionerror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a given process doesnât exist.\nCorresponds to errno ESRCH.",
+      "errorName": "processlookuperror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Raised when a system function timed out at the system level.\nCorresponds to errno ETIMEDOUT.",
+      "errorName": "timeouterror",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warning categories.",
+      "errorName": "warning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings generated by user code.",
+      "errorName": "userwarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings about deprecated features when those warnings are\nintended for other Python developers.",
+      "errorName": "deprecationwarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings about features which will be deprecated in the\nfuture.",
+      "errorName": "pendingdeprecationwarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings about dubious syntax.",
+      "errorName": "syntaxwarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings about dubious runtime behavior.",
+      "errorName": "runtimewarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings about deprecated features when those warnings are\nintended for end users of applications that are written in Python.",
+      "errorName": "futurewarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings about probable mistakes in module imports.",
+      "errorName": "importwarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings related to Unicode.",
+      "errorName": "unicodewarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings related to bytes and bytearray.",
+      "errorName": "byteswarning",
+      "example": "",
+      "url": []
+    },
+    {
+      "description": "Base class for warnings related to resource usage. Ignored by the default\nwarning filters.\n\nNew in version 3.2.",
+      "errorName": "resourcewarning",
+      "example": "",
+      "url": []
+    }
+  ]
+}
